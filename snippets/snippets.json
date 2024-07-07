@@ -1,0 +1,74 @@
+{
+	"snippet.return": {
+		"body": ["return {$0:value}"],
+		"description": "Code snippet for the 'return' statement",
+		"prefix": "return",
+		"scope": "aspl"
+	},
+    "snippet.class": {
+		"body": ["class $TM_FILENAME_BASE {", "\t$0", "}"],
+		"description": "Code snippet for declaring a class",
+		"prefix": "class",
+		"scope": "aspl"
+	},
+    "snippet.enum": {
+		"body": ["enum $TM_FILENAME_BASE {", "\t$0", "}"],
+		"description": "Code snippet for declaring an enum",
+		"prefix": "enum",
+		"scope": "aspl"
+	},
+    "snippet.new": {
+		"body": ["new ${1:Class}()"],
+		"description": "Code snippet for the 'new' statement",
+		"prefix": "new",
+		"scope": "aspl"
+	},
+    "snippet.function": {
+		"body": ["function ${1:name}(){", "\t$0", "}"],
+		"description": "Code snippet for the declaring a function",
+		"prefix": "function",
+		"scope": "aspl"
+	},
+    "snippet.method": {
+		"body": ["method ${1:name}(){", "\t$0", "}"],
+		"description": "Code snippet for the declaring a method",
+		"prefix": "method",
+		"scope": "aspl"
+	},
+	"snippet.var": {
+		"body": ["varr ${1:type} ${2:name} = ${0:value}"],
+		"description": "Code snippet for the declaring a variable",
+		"prefix": "var",
+		"scope": "aspl"
+	},
+	"snippet.if": {
+		"body": ["if(${1:value}){", "\t$0", "}"],
+		"description": "Code snippet for the 'if' statement",
+		"prefix": "if",
+		"scope": "aspl"
+	},
+	"snippet.elseif": {
+		"body": ["elseif(${1:value}){", "\t$0", "}"],
+		"description": "Code snippet for the 'elseif' statement",
+		"prefix": "elseif",
+		"scope": "aspl"
+	},
+	"snippet.ifelse": {
+		"body": ["if(${1:value}){", "\t$0", "}else{", "\t", "}"],
+		"description": "Code snippet for the 'if-else' statement",
+		"prefix": "ifelse",
+		"scope": "aspl"
+	},
+	"snippet.while": {
+		"body": ["while ${1:expression}{", "\t$0", "}"],
+		"description": "Code snippet for the 'while' statement",
+		"prefix": "while",
+		"scope": "aspl"
+	},
+	"snippet.repeat": {
+		"body": ["repeat(${1:iterations}){", "\t$0", "}"],
+		"description": "Code snippet for the 'repeat' statement",
+		"prefix": "repeat",
+		"scope": "aspl"
+	}
+}

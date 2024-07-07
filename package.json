@@ -1,0 +1,99 @@
+{
+    "name": "aspl",
+    "displayName": "ASPL",
+    "description": "Visual Studio Code integration for the ASPL programming language",
+    "publisher": "ASPL",
+    "icon": "icon.png",
+    "version": "0.1.0",
+    "engines": {
+        "vscode": "^1.59.0"
+    },
+    "homepage": "https://github.com/aspl-lang/",
+    "bugs": {
+        "url": "https://github.com/aspl-lang/vscode-extension/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aspl-lang/vscode-extension"
+    },
+    "keywords": [
+        "ASPL",
+        "aspl",
+        "extension"
+    ],
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "aspl",
+                "aliases": [
+                    "ASPL"
+                ],
+                "extensions": [
+                    ".aspl"
+                ],
+                "configuration": "./language-configuration.json",
+                "icon": {
+                    "light": "icon.png",
+                    "dark": "icon.png"
+                }
+            }
+        ],
+        "grammars": [
+            {
+                "language": "aspl",
+                "scopeName": "source.aspl",
+                "path": "./syntaxes/aspl.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+			{
+				"language": "aspl",
+				"path": "snippets/snippets.json"
+			}
+		],
+        "commands": [
+            {
+                "command": "aspl.version",
+                "title": "Display installed ASPL version",
+                "category": "ASPL"
+            },
+            {
+                "command": "aspl.run_workspace",
+                "title": "Run current workspace",
+                "category": "ASPL"
+            },
+            {
+                "command": "aspl.compile_workspace",
+                "title": "Compile current workspace",
+                "category": "ASPL"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "aspl.version"
+                },
+                {
+                    "command": "aspl.run_workspace",
+                    "when": "workspaceFolderCount > 0"
+                },
+                {
+                    "command": "aspl.compile_workspace",
+                    "when": "workspaceFolderCount > 0"
+                }
+            ]
+        }
+    },
+    "activationEvents": [
+        "onLanguage:aspl",
+        "workspaceContains:**/*.aspl",
+        "onCommand:aspl.version",
+        "onCommand:aspl.run_workspace",
+        "onCommand:aspl.compile_workspace"
+    ],
+    "main": "./out/extension.js",
+    "dependencies": {}
+}

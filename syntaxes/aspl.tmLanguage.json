@@ -1,0 +1,120 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ASPL",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#comments"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.aspl",
+          "match": "\\b(abstract|as|assert|attribute|break|callback|class|continue|else|elseif|enum|escape|extends|fallback|foreach|function|if|import|method|new|oftype|property|public|readpublic|repeat|return|returns|self|static|this|threadlocal|var|while)\\b"
+        },
+        {
+          "name": "keyword.operator.new.aspl",
+          "match": "\\b(new)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "keyword.type.aspl",
+          "match": "\\b(any|bool|boolean|byte|callback|double|float|int|integer|list|long|map|string)\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "keyword.function.aspl",
+          "match": "\\b(exit|input|key|print|range)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.aspl",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.aspl",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.exponential.aspl",
+          "match": "([0-9]+(_?))+(\\.)([0-9]+[eE][-+]?[0-9]+)"
+        },
+        {
+          "name": "constant.numeric.float.aspl",
+          "match": "([0-9]+(_?))+(((\\.)([0-9]+))|f)"
+        },
+        {
+          "name": "constant.numeric.double.aspl",
+          "match": "([0-9]+(_?))+((\\.)([0-9]+))?d"
+        },
+        {
+          "name": "constant.numeric.byte.aspl",
+          "match": "(?:(?:[0-9]+)(?:[_]?))+b"
+        },
+        {
+          "name": "constant.numeric.long.aspl",
+          "match": "(?:(?:[0-9]+)(?:[_]?))+b"
+        },
+        {
+          "name": "constant.numeric.integer.aspl",
+          "match": "(?:(?:[0-9]+)(?:[_]?))+"
+        }
+      ]
+    },
+    "constants": {
+      "name": "constant.language.aspl",
+      "match": "\\b(true|false|null)\\b"
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.block",
+          "begin": "/\\*",
+          "end": "\\*/",
+          "patterns": [
+            {
+              "include": "#comments"
+            }
+          ]
+        },
+        {
+          "name": "comment.line.double-slash.aspl",
+          "begin": "//",
+          "end": "$"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.aspl"
+}
